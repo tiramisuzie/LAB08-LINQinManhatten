@@ -8,7 +8,11 @@ namespace LAB08_LINQinManhatten
         static void Main(string[] args)
         {
             Util util = new Util();
-            Manhattan manhattan = new Manhattan();
+            Manhattan manhattan = util.GetManhattanData();
+            Console.WriteLine("Output all of the neighborhoods in this data list");
+            util.OutputNeighborhood(manhattan);
+            
+
         }
     }
 }

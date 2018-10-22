@@ -31,5 +31,14 @@ namespace LAB08_LINQinManhatten
                 Console.WriteLine(neighborhood);
             }
         }
+
+        public void FilterNoNameNeighborhood(Manhattan manhattan)
+        {
+            var neighborhoods = manhattan.Features.Select(x => x.Properties).Select(x => x.Neighborhood).Where(x => x != "");
+            foreach (string neighborhood in neighborhoods)
+            {
+                Console.WriteLine(neighborhood);
+            }
+        }
     }
 }

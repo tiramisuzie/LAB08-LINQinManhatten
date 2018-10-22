@@ -8,7 +8,7 @@ namespace LAB08_LINQinManhatten.Classes
         public string Type { get; set; }
 
         [JsonProperty("coordinates")]
-        public int[] Coordinates { get; set; }
+        public double[] Coordinates { get; set; }
         
     }
 }

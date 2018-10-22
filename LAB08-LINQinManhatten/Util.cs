@@ -40,5 +40,37 @@ namespace LAB08_LINQinManhatten
                 Console.WriteLine(neighborhood);
             }
         }
+        public void RemoveDuplicates(Manhattan manhattan)
+        {
+            var neighborhoods = manhattan.Features.Select(x => x.Properties).Select(x => x.Neighborhood).Distinct();
+
+            foreach (var neighborhood in neighborhoods)
+            {
+                Console.WriteLine(neighborhood);
+            }
+        }
+
+        public void RemoveDuplicateAndNoNameNeighborhood(Manhattan manhattan)
+        {
+            var neighborhoods = manhattan.Features.Select(x => x.Properties).Select(x => x.Neighborhood).Where(x => x != "").Distinct();
+
+            foreach (var neighborhood in neighborhoods)
+            {
+                Console.WriteLine(neighborhood);
+            }
+        }
+
+        public void RewriteWithLINQ(Manhattan manhattan)
+        {
+            var neighborhoods = (from features in manhattan.Features
+                                 where features.Properties.Neighborhood != ""
+                                 select features.Properties.Neighborhood).Distinct();
+
+            foreach (var neighborhood in neighborhoods)
+            {
+                Console.WriteLine(neighborhood);
+            }
+        }
     }
 }
+

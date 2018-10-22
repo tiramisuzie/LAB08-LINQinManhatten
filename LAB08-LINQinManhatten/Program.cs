@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LAB08_LINQinManhatten.Classes;
+using System;
 
 namespace LAB08_LINQinManhatten
 {
@@ -6,7 +7,8 @@ namespace LAB08_LINQinManhatten
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Util util = new Util();
+            Manhattan manhattan = new Manhattan();
         }
     }
 }
